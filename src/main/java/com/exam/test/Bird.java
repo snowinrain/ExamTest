@@ -1,9 +1,9 @@
 package com.exam.test;
 
-class Bird extends Animal {
-    public void fly() {
-        System.out.println("I am flying");
-    }
+import com.exam.test.intefaces.Flyable;
+import com.exam.test.intefaces.Walkable;
+
+class Bird extends Animal implements Walkable, Flyable{
     
     public void sing() {
         System.out.println("I am singing");

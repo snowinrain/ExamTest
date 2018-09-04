@@ -1,4 +1,4 @@
-package com.exam.test;
+package com.exam.test.intefaces;
 
 public interface Swimable {
     public default void swim() {

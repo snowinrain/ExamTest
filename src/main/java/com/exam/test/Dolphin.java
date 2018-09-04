@@ -1,4 +1,4 @@
 package com.exam.test;
 
-class Dolphin implements Swimable {
+class Dolphin extends Fish {
 }

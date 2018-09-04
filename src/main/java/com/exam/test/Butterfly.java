@@ -1,8 +1,7 @@
 package com.exam.test;
 
-class Butterfly {
-    public void fly() {
-        System.out.println("I am flying");
-    }
+import com.exam.test.intefaces.Flyable;
+
+class Butterfly extends Animal implements Flyable{
     
 }

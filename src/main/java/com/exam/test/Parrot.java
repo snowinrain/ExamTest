@@ -1,8 +1,17 @@
 package com.exam.test;
 
-public class Parrot {
+import com.exam.test.intefaces.Talkable;
+
+public class Parrot extends Animal implements Talkable{
     
-    public void say(Talkable talkableThing) {
+    private Talkable talkableThing;
+    
+    public Parrot(Talkable talkableThing) {
+        this.talkableThing = talkableThing;
+    }
+    
+    @Override
+    public void say() {
         talkableThing.say();
     }
 }

@@ -1,12 +1,10 @@
 package com.exam.test;
 
-class Fish {
+import com.exam.test.intefaces.Swimable;
+
+class Fish extends Animal implements Swimable{
     private String size;
     private String color;
-    
-    public void swim() {
-        System.out.println("I am Swimming");
-    }
 
     public String getSize() {
         return size;

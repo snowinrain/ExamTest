@@ -1,6 +1,8 @@
 package com.exam.test;
 
-public class ClownFish extends Fish {
+import com.exam.test.intefaces.Swimable;
+
+public class ClownFish extends Fish implements Swimable{
     public ClownFish() {
         setSize("small");
         setColor("orange");
