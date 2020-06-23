@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dancing Angels</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '2141490332844323',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v7.0'
+    });
+
+  };
+
+
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+</head>
+<body>
+
+
+  
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+
+
+    (function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'Messenger'));
+
+    window.extAsyncInit = function() {
+    console.log("done");
+
+
+    MessengerExtensions.getUserID(function success(user_ids) {
+      // User ID was successfully obtained. 
+      let psid = user_ids.psid;
+      console.log("psid", psid);
+      alert(psid);
+    }, function error(err, errorMessage) {      
+      console.log("err", err);
+      console.log("errorMessage", errorMessage);
+      alert("errorMessage: " + errorMessage);
+    });
+
+};
+
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v7.0'
+      });
+
+      var finished_rendering = function(response) {
+        console.log("finished rendering plugins", response);
+        var temp = $('.fb_customer_chat_bounce_in_v2').contentWindow;
+        console.log("temp", temp);
+      }
+
+      // In your onload handler
+      FB.Event.subscribe('xfbml.render', finished_rendering);
+
+
+    };
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat"
+    attribution=setup_tool
+    logged_in_greeting="Hi! If you're facing any problem, please text me here"
+  logged_out_greeting="Hi! If you're facing any problem, please text me here"
+    page_id="134204263927963">
+  </div>
+
+   <button onclick="myFunction()">Click me</button>
+
+
+
+   <script>
+
+
+
+</script>
+
+</body>
+</html>
